@@ -19,15 +19,19 @@ select_label.pack()
 button_frame = tk.Frame(window, bg="black")
 button_frame.pack(pady=20)
 
+# On-click function
+def on_click(button_name): # Takes the name of the button as a parameter
+    print(f"{button_name} has been selected") # Prints the action to the console
+
 # Buttons ~ Impulse, Collisions, Kinematics and Dynamics
-impulse_button = ttk.Button(button_frame, text="Impulse and Work Done", style="BW.TButton")
+impulse_button = ttk.Button(button_frame, text="Impulse and Work Done", style="BW.TButton", command=lambda: on_click("Impulse and Work Done"))
 impulse_button.pack(pady=10)
 
-collisions_button = ttk.Button(button_frame, text="Collisions", style="BW.TButton")
-impulse_button.pack(pady=10)
+collisions_button = ttk.Button(button_frame, text="Collisions", style="BW.TButton", command=lambda: on_click("Collisions"))
+collisions_button.pack(pady=10)
 
-kinematics_button = ttk.Button(button_frame, text="Kinematics and Dynamics", style="BW.TButton")
-impulse_button.pack(pady=10)
+kinematics_button = ttk.Button(button_frame, text="Kinematics and Dynamics", style="BW.TButton", command=lambda: on_click("Kinematics and Dynamics"))
+kinematics_button.pack(pady=10)
 
 # Style for buttons
 style = ttk.Style()
