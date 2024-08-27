@@ -29,6 +29,7 @@ def new_page(button_name):
     new_window = tk.Toplevel(window)
     new_window.title(f"{button_name}")
     new_window.configure(bg="black")
+    new_window.geometry("800x600")
 
     label = tk.Label(new_window, text=f"Welcome to the {button_name} page!", font=("Times New Roman", 24), bg="black", fg="white")
     label.pack(pady=20)
@@ -38,13 +39,13 @@ def new_page(button_name):
     back_button.pack(pady=10)
 
 # Buttons ~ Impulse, Collisions, Kinematics and Dynamics
-impulse_button = ttk.Button(button_frame, text="Impulse and Work Done", style="BW.TButton", command=lambda: on_click("Impulse and Work Done"), comm = new_page("Impulse and Work Done"))
+impulse_button = ttk.Button(button_frame, text="Impulse and Work Done", style="BW.TButton",command=lambda: new_page(button_name="Impulse and Work Done"))
 impulse_button.pack(pady=10)
 
-collisions_button = ttk.Button(button_frame, text="Collisions", style="BW.TButton", command=lambda: on_click("Collisions"))
+collisions_button = ttk.Button(button_frame, text="Collisions", style="BW.TButton", command=lambda: new_page("Collisions"))
 collisions_button.pack(pady=10)
 
-kinematics_button = ttk.Button(button_frame, text="Kinematics and Dynamics", style="BW.TButton", command=lambda: on_click("Kinematics and Dynamics"))
+kinematics_button = ttk.Button(button_frame, text="Kinematics and Dynamics", style="BW.TButton", command=lambda: new_page("Kinematics and Dynamics"))
 kinematics_button.pack(pady=10)
 
 # Style for buttons
