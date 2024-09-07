@@ -20,21 +20,21 @@ def switch_frame(frame):
 def main_page():
     # Creates the main page frame.
     frame = tk.Frame(window, bg="black")
+
     title_label = tk.Label(frame, text="Mechanics Simulator", font=("Helvetica", 36), bg="black", fg="white")
-    title_label.grid(row=0, column=0, columnspan=2, pady=20)
+    title_label.pack(pady=20)
 
     select_label = tk.Label(frame, text="Select a module", font=("Helvetica", 24), bg="black", fg="white")
-    select_label.grid(row=1, column=0, columnspan=2)
+    select_label.pack(pady=20)
 
-    # Uses command = lambda: f(x) to provide the functionality
-    collisions_button = ttk.Button(frame, text="Collisions", style="BW.TButton", command=lambda: switch_frame(collisions_page()))
-    collisions_button.grid(row=2, column=0, padx=(20, 10))
+    button_frame = tk.Frame(frame, bg="black")
+    button_frame.pack()
 
-    springs_button = ttk.Button(frame, text="Springs and strings", style="BW.TButton", command=lambda: switch_frame(springs_page()))
-    springs_button.grid(row=2, column=1, padx=(10, 20))
+    collisions_button = ttk.Button(button_frame, text="Collisions", style="BW.TButton", command=lambda: switch_frame(collisions_page()))
+    collisions_button.pack(side='left', padx=10)
 
-    style1 = ttk.Style()
-    style1.configure("BW.TButton", font=("Helvetica", 18))
+    springs_button = ttk.Button(button_frame, text="Springs and strings", style="BW.TButton", command=lambda: switch_frame(springs_page()))
+    springs_button.pack(side='right', padx=10)
     return frame
 
 # Frame for the collision page
