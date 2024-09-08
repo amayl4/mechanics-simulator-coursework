@@ -21,10 +21,10 @@ def main_page():
     # Creates the main page frame.
     frame = tk.Frame(window, bg="black")
 
-    title_label = tk.Label(frame, text="Mechanics Simulator", font=("Helvetica", 36), bg="black", fg="white")
+    title_label = tk.Label(frame, text="Mechanics Simulator", font=("Helvetica Bold", 36), bg="black", fg="white")
     title_label.pack(pady=20)
 
-    select_label = tk.Label(frame, text="Select a module", font=("Helvetica", 24), bg="black", fg="white")
+    select_label = tk.Label(frame, text="Select a module", font=("Helvetica Bold", 24), bg="black", fg="white")
     select_label.pack(pady=20)
 
     button_frame = tk.Frame(frame, bg="black")
@@ -38,17 +38,47 @@ def main_page():
     return frame
 
 # Frame for the collision page
+import variables as va
 def collisions_page():
     frame = tk.Frame(window, bg="black")
-    label = tk.Label(frame, text="Collisions Page", font=("Helvetica", 24), bg="black", fg="white")
-    label.pack()
+    label = tk.Label(frame, text="Collisions Page", font=("Helvetica Bold", 24), bg="black", fg="white")
+    label.pack(pady=20)
+
+    button_frame = tk.Frame(frame, bg="black")
+    button_frame.pack()
+
+    va.mass(frame)
+    va.mass2(frame)
+    va.velocity(frame)
+    va.velocity2(frame)
+    va.coefficient_restitution(frame)
+
+    back_button = ttk.Button(button_frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
+    back_button.pack(padx=10)
     return frame
 
 # Frame for the springs page
 def springs_page():
     frame = tk.Frame(window, bg="black")
-    label = tk.Label(frame, text="Springs and Strings Page", font=("Helvetica", 24), bg="black", fg="white")
-    label.pack()
+    label = tk.Label(frame, text="Springs and Strings Page", font=("Helvetica Bold", 24), bg="black", fg="white")
+    label.pack(pady=20)
+
+    button_frame = tk.Frame(frame, bg="black")
+    button_frame.pack()
+
+    va.mass(frame)
+    va.spring_constant(frame)
+    va.displacement(frame)
+    va.damping_coefficient(frame)
+    va.velocity(frame)
+    va.natural_length(frame)
+
+    back_button = ttk.Button(button_frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
+    back_button.pack(padx=10)
+
+    submit_button = ttk.Button(button_frame, text="Submit", style="BW.TButton", command=lambda: print(frame))
+    submit_button.pack(padx=10)
+
     return frame
 
 # Switch to the main page
