@@ -1,11 +1,10 @@
 import tkinter as tk
-import validation as vl
+import vars.validation as vl
 from tkinter import ttk
 
 # Main window
 window = tk.Tk()
 window.title("Mechanics Simulator")  # Title
-window.configure()
 window.geometry("800x800")  # Size of window
 current_frame = None
 
@@ -36,8 +35,8 @@ def main_page():
     return frame
 
 # Frame for the collision page
-import variables as va
-import validation as vl
+import vars.variables as va
+
 def collisions_page():
     frame = tk.Frame(window)
     label = tk.Label(frame, text="Collisions Page", font=("Helvetica Bold", 24), fg="white")
