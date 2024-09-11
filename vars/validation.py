@@ -1,13 +1,18 @@
 import tkinter as tk
 
+# def validate_mass(x):
+#     try:
+#         mass_value = float(x.get())
+#         if mass_value < 0 and mass_value is not float:
+#             raise ValueError("Mass must be a postitive real number")
+#     except ValueError as e:
+#         # Handle the case where the user hasn't entered a valid number or a negative number
+#         print(f"Invalid input: {e}")
+
 def validate_mass(x):
-    try:
-        mass_value = float(x.get())
-        if mass_value < 0 and mass_value is not float:
-            raise ValueError("Mass must be a postitive real number")
-    except ValueError as e:
-        # Handle the case where the user hasn't entered a valid number or a negative number
-        print(f"Invalid input: {e}")
+    mass_value = float(x.get())
+    if mass_value < 0 and mass_value is not float:
+        raise ValueError("Mass must be a positive real number")
 
 def validate_velocity(x):
     try:
