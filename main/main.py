@@ -43,16 +43,27 @@ def collisions_page():
     label = tk.Label(frame, text="Collisions Page", font=("Helvetica Bold", 24), fg="white")
     label.pack(pady=20)
 
-    va.mass(frame)
-    va.mass2(frame)
-    va.velocity(frame)
-    va.velocity2(frame)
-    va.coefficient_restitution(frame)
+    m = va.mass(frame)
+    m2 = va.mass2(frame)
+    u = va.velocity_init(frame)
+    u2 =  va.velocity_init2(frame)
+    v = va.velocity(frame)
+    v2 = va.velocity2(frame)
+    e = va.coefficient_restitution(frame)
+
+    def validate():
+        vl.validate_mass(m)
+        vl.validate_mass(m2)
+        vl.validate_velocity(u)
+        vl.validate_velocity(u2)
+        vl.validate_velocity(v)
+        vl.validate_velocity(v2)
+        vl.validate_restitution(e)
 
     back_button = ttk.Button(frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
     back_button.pack(padx=10)
 
-    submit_button = ttk.Button(frame, text="Submit", style="BW.TButton", command=lambda: print(frame))
+    submit_button = ttk.Button(frame, text="Submit", style="BW.TButton", command=lambda: validate())
     submit_button.pack(padx=10)
     return frame
 
@@ -65,12 +76,17 @@ def springs_page():
     m = va.mass(frame)
     k = va.spring_constant(frame)
     s = va.displacement(frame)
-    zeta = va.damping_coefficient(frame)
+    ym = va.young_mod(frame)
     v = va.velocity(frame)
     l = va.natural_length(frame)
 
     def validate():
         vl.validate_mass(m)
+        vl.validate_displacement(s)
+        vl.validate_natural_length(l)
+        vl.validate_young_modulus(ym)
+        vl.validate_velocity(v)
+        vl.validate_spring_constant(k)
 
     back_button = ttk.Button(frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
     back_button.pack(padx=10)
