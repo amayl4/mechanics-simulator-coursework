@@ -33,7 +33,7 @@ def velocity_init(x):
 
 def velocity_init2(x):
     initialvel2_var = tk.DoubleVar()
-    initialvel2_label = tk.Label(x, text="Enter initial velocity for particle 1", font=("Helvetica", 18))
+    initialvel2_label = tk.Label(x, text="Enter initial velocity for particle 2", font=("Helvetica", 18))
     initialvel2_entry = tk.Entry(x, textvariable=initialvel2_var, font=("Helvetica", 18))
     initialvel2_label.pack()
     initialvel2_entry.pack()
