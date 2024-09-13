@@ -17,11 +17,10 @@ def validate_mass(x):
 def validate_velocity(x):
     try:
         velocity_value = float(x.get())
-        if velocity_value is not float:
-            raise ValueError("Velocity must be a real number")
+        if velocity_value < 0:
+            raise ValueError("Velocity must be a positive real number")
     except ValueError as e:
-        # Handle the case where the user hasn't entered a valid number or a negative number
-        print(f"Invalid input: {e}")
+            print(f"Invalid input: {e}")
 
 def validate_restitution(x):
     try:
@@ -41,8 +40,8 @@ def validate_displacement(x):
 
 def validate_natural_length(x):  
     try:
-        displacement_value = float(x.get())
-        if displacement_value < 0:
+        natural_length_value = float(x.get())
+        if natural_length_value < 0:
             raise ValueError("Natural length must be a positive real number")
     except ValueError as e:
         print(f"Invalid input: {e}")
