@@ -38,6 +38,14 @@ def validate_displacement(x):
     except ValueError as e:
         print(f"Invalid input: {e}")
 
+def validate_impulse(x):  
+    try:
+        impulse_value = float(x.get())
+        if impulse_value < 0:
+            raise ValueError("Impulse must be a positive real number")
+    except ValueError as e:
+        print(f"Invalid input: {e}")
+
 def validate_natural_length(x):  
     try:
         natural_length_value = float(x.get())

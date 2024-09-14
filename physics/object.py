@@ -1,8 +1,9 @@
 class object:
-    def __init__(self, name, mass, velocity, position):
+    def __init__(self, name, mass, initial_velocity, final_velocity, position):
         self.name = name
         self.mass = mass
-        self.velocity = velocity # [vx, vy]
+        self.initial_velocity = initial_velocity # [ux, uy]
+        self.final_velocity = final_velocity # [vx, vy]
         self.position = position # [x, y]
         self.acceleration = [0,0] # Acceleration always starts at 0
 

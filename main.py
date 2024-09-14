@@ -49,6 +49,8 @@ def collisions_page():
     v = va.velocity(frame)
     v2 = va.velocity2(frame)
     e = va.coefficient_restitution(frame)
+    i1 = va.impulse1(frame)
+    i2 = va.impulse2(frame)
 
     def validate():
         vl.validate_mass(m)
@@ -58,6 +60,8 @@ def collisions_page():
         vl.validate_velocity(v)
         vl.validate_velocity(v2)
         vl.validate_restitution(e)
+        vl.validate_impulse(i1)
+        vl.validate_impulse(i2)
 
     back_button = ttk.Button(frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
     back_button.pack(padx=10)
@@ -75,7 +79,7 @@ def springs_page():
     m = va.mass(frame)
     k = va.spring_constant(frame)
     s = va.displacement(frame)
-    ym = va.young_mod(frame)
+    λ = va.young_mod(frame)
     v = va.velocity(frame)
     l = va.natural_length(frame)
 
@@ -83,7 +87,7 @@ def springs_page():
         vl.validate_mass(m)
         vl.validate_displacement(s)
         vl.validate_natural_length(l)
-        vl.validate_young_modulus(ym)
+        vl.validate_young_modulus(λ)
         vl.validate_velocity(v)
         vl.validate_spring_constant(k)
 
