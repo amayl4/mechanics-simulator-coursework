@@ -1,3 +1,7 @@
+import vars.variables as va
+
+m1 = va.mass()
+
 def calculate_impulse1(m1, u1, v1):
     # Calculates the impulse of object 1 due to the collision with object 2
     impulse1 = (m1 * v1) - (m1 *  u1)
