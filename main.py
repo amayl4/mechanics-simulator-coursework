@@ -90,11 +90,13 @@ def springs_page():
         vl.validate_young_modulus(λ)
         vl.validate_velocity(v)
         vl.validate_spring_constant(k)
+    
+    validate()
 
     back_button = ttk.Button(frame, text="Back to main menu", style="BW.TButton", command=lambda: switch_frame(main_page()))
     back_button.pack(padx=10)
 
-    submit_button = ttk.Button(frame, text="Submit", style="BW.TButton", command=lambda: validate())
+    submit_button = ttk.Button(frame, text="Submit", style="BW.TButton", command=lambda: None)
     submit_button.pack(padx=10)
 
     return frame

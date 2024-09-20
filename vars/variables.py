@@ -1,7 +1,7 @@
 import tkinter as tk
 import vars.validation as vl
 
-    
+
 def mass(x):
     # Create a variable to store the mass value
     mass_var = tk.DoubleVar()
